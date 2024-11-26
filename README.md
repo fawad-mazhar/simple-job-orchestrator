@@ -103,10 +103,10 @@ The `graph` represents the dependencies and orchestration order of a task. In th
 ## Getting Started
 ```bash
 # Clone the repository
-git clone https://github.com/fawad1985/go-job-orchestrator.git
+git clone https://github.com/fawad-mazhar/simple-job-orchestrator.git
 
 # Change to project directory
-cd go-job-orchestrator
+cd simple-job-orchestrator
 
 # Install dependencies
 go mod download
