@@ -91,9 +91,14 @@ internal/
       "maxRetry": 2,
       "functionName": "task2Function"
     }
-  ]
+  ],
+  "graph": {
+      "task1": [],
+      "task2": ["task1"],
+    }
 }
 ```
+The `graph` represents the dependencies and orchestration order of a task. In this example, `task1` can start immediately, `task2` can start after `task1` is completed.
 
 ## Getting Started
 ```bash
@@ -139,7 +144,7 @@ go build -o cmd/server/jobs cmd/server/main.go
     }
   }
   ```
-  The `graph` states the task dependencies and orchestration order. In this example, `task1` can start immediately, `task2` and `task3` can start after `task1` is completed, and `task4` can only start after both `task2` and `task3` are completed.
+  The `graph` represents the task dependencies and orchestration order. In this example, `task1` can start immediately, `task2` and `task3` can start after `task1` is completed, and `task4` can only start after both `task2` and `task3` are completed.
 </details>
 
 <details>
