@@ -64,6 +64,20 @@ internal/
 └── task_functions/ - Actual task implementations
 ```
 
+#### Architecture
+```mermaid
+flowchart TD
+    A[Job Orchestrator] -->|Stores| B[Job Definitions]
+    A -->|Tracks| C[Job Executions]
+    A -->|Manages| D[Task Functions]
+    C -->|Contains| E[Task Statuses]
+    B -->|Defines| F[Tasks]
+    F -->|Has| G[Graph Dependencies]
+    C -->|Enqueues| H[Task Execution]
+    C -->|Updates| I[Execution Status]
+    A -->|Handles| J[HTTP API]
+```
+
 #### Data Flow
 - Job Definitions loaded from JSON files
 - Tasks registered with orchestrator
